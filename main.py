@@ -11,7 +11,6 @@ if __name__=="__main__":
     player = {"hand": []}
     dealer = {"hand": []}
 
-    game_logic.run_full_game(deck, player, dealer)
-
+    print(game_logic.run_full_game(deck.build_standard_deck(), player, dealer))
 
 
