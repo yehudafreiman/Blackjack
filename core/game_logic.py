@@ -24,11 +24,11 @@ def dealer_play(deck: list[dict], dealer: dict) -> bool:
     while True:
         dealer["hand"].append(deck.pop())
         if calculate_hand_value(dealer["hand"]) > 21:
-            print(f"hand value: {calculate_hand_value(dealer["hand"])}")
+            print(f"dealer hand value: {calculate_hand_value(dealer["hand"])}")
             print("Loss")
             return False
         if 17 < calculate_hand_value(dealer["hand"]) < 21:
-            print(f"hand value: {calculate_hand_value(dealer["hand"])}")
+            print(f"dealer hand value: {calculate_hand_value(dealer["hand"])}")
             print("End")
             return True
 
@@ -41,7 +41,7 @@ def run_full_game(deck: list[dict], player: dict, dealer:dict) -> None:
             player["hand"].append(deck.pop())
             player_hand_value = calculate_hand_value(player["hand"])
             if player_hand_value > 21:
-                print(f"hand value: {player_hand_value}")
+                print(f"player hand value: {player_hand_value}")
                 print("Loss")
                 break
             else:
