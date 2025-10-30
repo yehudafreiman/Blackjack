@@ -48,4 +48,4 @@ def run_full_game(deck: list[dict], player: dict, dealer:dict) -> None:
                 continue
     else:
         dealer_play(deck, dealer)
-    return
+    return None
