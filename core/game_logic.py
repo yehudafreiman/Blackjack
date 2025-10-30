@@ -1,5 +1,4 @@
 from core import player_io
-from core import deck
 
 def calculate_hand_value(hand: list[dict]) -> int:
     result = 0
@@ -32,7 +31,6 @@ def dealer_play(deck: list[dict], dealer: dict) -> bool:
             print(f"hand value: {calculate_hand_value(dealer["hand"])}")
             print("End")
             return True
-
 
 
 def run_full_game(deck: list[dict], player: dict, dealer:dict) -> None:
