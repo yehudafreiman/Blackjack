@@ -35,7 +35,17 @@ def dealer_play(deck: list[dict], dealer: dict) -> bool:
 
 def run_full_game(deck: list[dict], player: dict, dealer:dict) -> None:
     deal_two_each(deck, player, dealer)
-    player_io.ask_player_action()
-
-    dealer_play(deck, dealer)
+    selected_action = player_io.ask_player_action()
+    if selected_action == "H":
+        while True:
+            player["hand"].append(deck.pop())
+            player_hand_value = calculate_hand_value(player["hand"])
+            if player_hand_value > 21:
+                print(f"hand value: {player_hand_value}")
+                print("Loss")
+                break
+            else:
+                continue
+    else:
+        dealer_play(deck, dealer)
     return
