@@ -49,5 +49,10 @@ def run_full_game(deck: list[dict], player: dict, dealer:dict) -> None:
     else:
         dealer_play(deck, dealer)
         if dealer_play(deck, dealer) == True:
-            calculate_hand_value(player["hand"])
+            if calculate_hand_value(player["hand"]) == calculate_hand_value(dealer["hand"]):
+                print("teiku")
+            elif calculate_hand_value(player["hand"]) < calculate_hand_value(dealer["hand"]):
+                print("dealer won")
+            else:
+                print("player won")
     return None
