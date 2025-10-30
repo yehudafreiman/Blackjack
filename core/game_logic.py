@@ -22,12 +22,14 @@ def deal_two_each(deck :list[dict], player: dict, dealer: dict) -> None:
 
 
 def dealer_play(deck: list[dict], dealer: dict) -> bool:
-    while calculate_hand_value(dealer["hand"]) >= 17:
+    while True:
         dealer["hand"].append(deck.pop())
         if calculate_hand_value(dealer["hand"]) > 21:
+            print(f"hand value: {calculate_hand_value(dealer["hand"])}")
             print("Loss")
             return False
         if 17 < calculate_hand_value(dealer["hand"]) < 21:
+            print(f"hand value: {calculate_hand_value(dealer["hand"])}")
             print("End")
             return True
 
